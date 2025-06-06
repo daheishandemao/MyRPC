@@ -1,0 +1,67 @@
+[
+{
+  "directory": "/home/ubuntu/zrx/projects/MyRPC/build/src",
+  "command": "/usr/bin/g++  -I/home/ubuntu/zrx/projects/MyRPC/src/include -I/home/ubuntu/zrx/projects/MyRPC/example -g -o CMakeFiles/myrpc.dir/myrpcapplication.cc.o -c /home/ubuntu/zrx/projects/MyRPC/src/myrpcapplication.cc",
+  "file": "/home/ubuntu/zrx/projects/MyRPC/src/myrpcapplication.cc"
+},
+{
+  "directory": "/home/ubuntu/zrx/projects/MyRPC/build/src",
+  "command": "/usr/bin/g++  -I/home/ubuntu/zrx/projects/MyRPC/src/include -I/home/ubuntu/zrx/projects/MyRPC/example -g -o CMakeFiles/myrpc.dir/myrpcconfig.cc.o -c /home/ubuntu/zrx/projects/MyRPC/src/myrpcconfig.cc",
+  "file": "/home/ubuntu/zrx/projects/MyRPC/src/myrpcconfig.cc"
+},
+{
+  "directory": "/home/ubuntu/zrx/projects/MyRPC/build/src",
+  "command": "/usr/bin/g++  -I/home/ubuntu/zrx/projects/MyRPC/src/include -I/home/ubuntu/zrx/projects/MyRPC/example -g -o CMakeFiles/myrpc.dir/rpcprovider.cc.o -c /home/ubuntu/zrx/projects/MyRPC/src/rpcprovider.cc",
+  "file": "/home/ubuntu/zrx/projects/MyRPC/src/rpcprovider.cc"
+},
+{
+  "directory": "/home/ubuntu/zrx/projects/MyRPC/build/src",
+  "command": "/usr/bin/g++  -I/home/ubuntu/zrx/projects/MyRPC/src/include -I/home/ubuntu/zrx/projects/MyRPC/example -g -o CMakeFiles/myrpc.dir/rpcheader.pb.cc.o -c /home/ubuntu/zrx/projects/MyRPC/src/rpcheader.pb.cc",
+  "file": "/home/ubuntu/zrx/projects/MyRPC/src/rpcheader.pb.cc"
+},
+{
+  "directory": "/home/ubuntu/zrx/projects/MyRPC/build/src",
+  "command": "/usr/bin/g++  -I/home/ubuntu/zrx/projects/MyRPC/src/include -I/home/ubuntu/zrx/projects/MyRPC/example -g -o CMakeFiles/myrpc.dir/myrpcchannel.cc.o -c /home/ubuntu/zrx/projects/MyRPC/src/myrpcchannel.cc",
+  "file": "/home/ubuntu/zrx/projects/MyRPC/src/myrpcchannel.cc"
+},
+{
+  "directory": "/home/ubuntu/zrx/projects/MyRPC/build/src",
+  "command": "/usr/bin/g++  -I/home/ubuntu/zrx/projects/MyRPC/src/include -I/home/ubuntu/zrx/projects/MyRPC/example -g -o CMakeFiles/myrpc.dir/myrpccontroller.cc.o -c /home/ubuntu/zrx/projects/MyRPC/src/myrpccontroller.cc",
+  "file": "/home/ubuntu/zrx/projects/MyRPC/src/myrpccontroller.cc"
+},
+{
+  "directory": "/home/ubuntu/zrx/projects/MyRPC/build/src",
+  "command": "/usr/bin/g++  -I/home/ubuntu/zrx/projects/MyRPC/src/include -I/home/ubuntu/zrx/projects/MyRPC/example -g -o CMakeFiles/myrpc.dir/logger.cc.o -c /home/ubuntu/zrx/projects/MyRPC/src/logger.cc",
+  "file": "/home/ubuntu/zrx/projects/MyRPC/src/logger.cc"
+},
+{
+  "directory": "/home/ubuntu/zrx/projects/MyRPC/build/src",
+  "command": "/usr/bin/g++  -I/home/ubuntu/zrx/projects/MyRPC/src/include -I/home/ubuntu/zrx/projects/MyRPC/example -g -o CMakeFiles/myrpc.dir/lockqueue.cc.o -c /home/ubuntu/zrx/projects/MyRPC/src/lockqueue.cc",
+  "file": "/home/ubuntu/zrx/projects/MyRPC/src/lockqueue.cc"
+},
+{
+  "directory": "/home/ubuntu/zrx/projects/MyRPC/build/src",
+  "command": "/usr/bin/g++  -I/home/ubuntu/zrx/projects/MyRPC/src/include -I/home/ubuntu/zrx/projects/MyRPC/example -g -o CMakeFiles/myrpc.dir/zookeeperutil.cc.o -c /home/ubuntu/zrx/projects/MyRPC/src/zookeeperutil.cc",
+  "file": "/home/ubuntu/zrx/projects/MyRPC/src/zookeeperutil.cc"
+},
+{
+  "directory": "/home/ubuntu/zrx/projects/MyRPC/build/example/callee",
+  "command": "/usr/bin/g++  -I/home/ubuntu/zrx/projects/MyRPC/src/include -I/home/ubuntu/zrx/projects/MyRPC/example -g -o CMakeFiles/provider.dir/friendservice.cc.o -c /home/ubuntu/zrx/projects/MyRPC/example/callee/friendservice.cc",
+  "file": "/home/ubuntu/zrx/projects/MyRPC/example/callee/friendservice.cc"
+},
+{
+  "directory": "/home/ubuntu/zrx/projects/MyRPC/build/example/callee",
+  "command": "/usr/bin/g++  -I/home/ubuntu/zrx/projects/MyRPC/src/include -I/home/ubuntu/zrx/projects/MyRPC/example -g -o CMakeFiles/provider.dir/__/friend.pb.cc.o -c /home/ubuntu/zrx/projects/MyRPC/example/friend.pb.cc",
+  "file": "/home/ubuntu/zrx/projects/MyRPC/example/friend.pb.cc"
+},
+{
+  "directory": "/home/ubuntu/zrx/projects/MyRPC/build/example/caller",
+  "command": "/usr/bin/g++  -I/home/ubuntu/zrx/projects/MyRPC/src/include -I/home/ubuntu/zrx/projects/MyRPC/example -g -o CMakeFiles/consumer.dir/callfriendservice.cc.o -c /home/ubuntu/zrx/projects/MyRPC/example/caller/callfriendservice.cc",
+  "file": "/home/ubuntu/zrx/projects/MyRPC/example/caller/callfriendservice.cc"
+},
+{
+  "directory": "/home/ubuntu/zrx/projects/MyRPC/build/example/caller",
+  "command": "/usr/bin/g++  -I/home/ubuntu/zrx/projects/MyRPC/src/include -I/home/ubuntu/zrx/projects/MyRPC/example -g -o CMakeFiles/consumer.dir/__/friend.pb.cc.o -c /home/ubuntu/zrx/projects/MyRPC/example/friend.pb.cc",
+  "file": "/home/ubuntu/zrx/projects/MyRPC/example/friend.pb.cc"
+}
+]

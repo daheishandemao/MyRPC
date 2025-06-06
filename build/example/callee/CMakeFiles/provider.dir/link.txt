@@ -1,0 +1,1 @@
+/usr/bin/g++ -g -rdynamic CMakeFiles/provider.dir/friendservice.cc.o CMakeFiles/provider.dir/__/friend.pb.cc.o -o ../../../bin/provider   -L/home/ubuntu/zrx/projects/MyRPC/lib  -Wl,-rpath,/home/ubuntu/zrx/projects/MyRPC/lib ../../../lib/libmyrpc.a -lprotobuf -lmuduo_net -lmuduo_base -lpthread -lzookeeper_mt 

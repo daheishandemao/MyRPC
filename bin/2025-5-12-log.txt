@@ -1,0 +1,5 @@
+0:15:11=>[info]first log message!
+
+0:15:11=>[info]/home/ubuntu/zrx/projects/MyRPC/example/callee/friendservice.cc:main:49
+0:15:11=>[info]service_name:FriendServiceRpc
+0:15:11=>[info]method_name:GetFriendList
