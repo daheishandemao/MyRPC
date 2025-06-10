@@ -11,6 +11,9 @@
 #include <functional>
 #include <unordered_map>//用于创建映射表
 #include "logger.h"
+#include "zookeeperutil.h"
+#include "trace_context.h"
+#include "rate_limiter.h"
 
 
 //框架提供的专门负责发布rpc服务的网络对象类
@@ -30,6 +33,9 @@ private:
     std::unique_ptr<muduo::net::TcpServer> m_tcpserverPtr;//未初始化的智能指针
     //组合EvectLoop
     muduo::net::EventLoop m_eventLoop;
+
+    //限流模块
+    RateLimiter rate_limiter_{5, 10}; // 每秒5个请求，最大突发10个
 
     //定义成员变量用于接收service服务类型信息
     struct ServiceInfo

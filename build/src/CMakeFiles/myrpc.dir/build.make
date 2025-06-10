@@ -195,6 +195,34 @@ src/CMakeFiles/myrpc.dir/zookeeperutil.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myrpc.dir/zookeeperutil.cc.s"
 	cd /home/ubuntu/zrx/projects/MyRPC/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/zrx/projects/MyRPC/src/zookeeperutil.cc -o CMakeFiles/myrpc.dir/zookeeperutil.cc.s
 
+src/CMakeFiles/myrpc.dir/trace_context.cc.o: src/CMakeFiles/myrpc.dir/flags.make
+src/CMakeFiles/myrpc.dir/trace_context.cc.o: ../src/trace_context.cc
+src/CMakeFiles/myrpc.dir/trace_context.cc.o: src/CMakeFiles/myrpc.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/zrx/projects/MyRPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/CMakeFiles/myrpc.dir/trace_context.cc.o"
+	cd /home/ubuntu/zrx/projects/MyRPC/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/myrpc.dir/trace_context.cc.o -MF CMakeFiles/myrpc.dir/trace_context.cc.o.d -o CMakeFiles/myrpc.dir/trace_context.cc.o -c /home/ubuntu/zrx/projects/MyRPC/src/trace_context.cc
+
+src/CMakeFiles/myrpc.dir/trace_context.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/myrpc.dir/trace_context.cc.i"
+	cd /home/ubuntu/zrx/projects/MyRPC/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/zrx/projects/MyRPC/src/trace_context.cc > CMakeFiles/myrpc.dir/trace_context.cc.i
+
+src/CMakeFiles/myrpc.dir/trace_context.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myrpc.dir/trace_context.cc.s"
+	cd /home/ubuntu/zrx/projects/MyRPC/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/zrx/projects/MyRPC/src/trace_context.cc -o CMakeFiles/myrpc.dir/trace_context.cc.s
+
+src/CMakeFiles/myrpc.dir/rate_limiter.cc.o: src/CMakeFiles/myrpc.dir/flags.make
+src/CMakeFiles/myrpc.dir/rate_limiter.cc.o: ../src/rate_limiter.cc
+src/CMakeFiles/myrpc.dir/rate_limiter.cc.o: src/CMakeFiles/myrpc.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/zrx/projects/MyRPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/CMakeFiles/myrpc.dir/rate_limiter.cc.o"
+	cd /home/ubuntu/zrx/projects/MyRPC/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/myrpc.dir/rate_limiter.cc.o -MF CMakeFiles/myrpc.dir/rate_limiter.cc.o.d -o CMakeFiles/myrpc.dir/rate_limiter.cc.o -c /home/ubuntu/zrx/projects/MyRPC/src/rate_limiter.cc
+
+src/CMakeFiles/myrpc.dir/rate_limiter.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/myrpc.dir/rate_limiter.cc.i"
+	cd /home/ubuntu/zrx/projects/MyRPC/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/zrx/projects/MyRPC/src/rate_limiter.cc > CMakeFiles/myrpc.dir/rate_limiter.cc.i
+
+src/CMakeFiles/myrpc.dir/rate_limiter.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myrpc.dir/rate_limiter.cc.s"
+	cd /home/ubuntu/zrx/projects/MyRPC/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/zrx/projects/MyRPC/src/rate_limiter.cc -o CMakeFiles/myrpc.dir/rate_limiter.cc.s
+
 # Object files for target myrpc
 myrpc_OBJECTS = \
 "CMakeFiles/myrpc.dir/myrpcapplication.cc.o" \
@@ -205,7 +233,9 @@ myrpc_OBJECTS = \
 "CMakeFiles/myrpc.dir/myrpccontroller.cc.o" \
 "CMakeFiles/myrpc.dir/logger.cc.o" \
 "CMakeFiles/myrpc.dir/lockqueue.cc.o" \
-"CMakeFiles/myrpc.dir/zookeeperutil.cc.o"
+"CMakeFiles/myrpc.dir/zookeeperutil.cc.o" \
+"CMakeFiles/myrpc.dir/trace_context.cc.o" \
+"CMakeFiles/myrpc.dir/rate_limiter.cc.o"
 
 # External object files for target myrpc
 myrpc_EXTERNAL_OBJECTS =
@@ -219,9 +249,11 @@ myrpc_EXTERNAL_OBJECTS =
 ../lib/libmyrpc.a: src/CMakeFiles/myrpc.dir/logger.cc.o
 ../lib/libmyrpc.a: src/CMakeFiles/myrpc.dir/lockqueue.cc.o
 ../lib/libmyrpc.a: src/CMakeFiles/myrpc.dir/zookeeperutil.cc.o
+../lib/libmyrpc.a: src/CMakeFiles/myrpc.dir/trace_context.cc.o
+../lib/libmyrpc.a: src/CMakeFiles/myrpc.dir/rate_limiter.cc.o
 ../lib/libmyrpc.a: src/CMakeFiles/myrpc.dir/build.make
 ../lib/libmyrpc.a: src/CMakeFiles/myrpc.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/zrx/projects/MyRPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX static library ../../lib/libmyrpc.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/zrx/projects/MyRPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX static library ../../lib/libmyrpc.a"
 	cd /home/ubuntu/zrx/projects/MyRPC/build/src && $(CMAKE_COMMAND) -P CMakeFiles/myrpc.dir/cmake_clean_target.cmake
 	cd /home/ubuntu/zrx/projects/MyRPC/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/myrpc.dir/link.txt --verbose=$(VERBOSE)
 

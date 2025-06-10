@@ -75,7 +75,7 @@ void RpcProvider::Run()
         //
         std::string service_path="/"+sp.first;
         zkCli.Create(service_path.c_str(),nullptr,0);
-        for(auto &mp:sp.senond.m_methodMap)
+        for(auto &mp:sp.second.m_methodMap)
         {
             //
             std::string method_path=service_path+"/"+mp.first;
@@ -118,6 +118,12 @@ service_name method_name args
 //如果远端有一个rpc服务的调用请求，那么OnMessage方法就会响应
 void RpcProvider::OnMessage(const muduo::net::TcpConnectionPtr&conn,muduo::net::Buffer *buffer,muduo::Timestamp)
 {
+    //顶部限流判断
+    if (!rate_limiter_.allow()) {
+        std::cout << "[RateLimiter] Request dropped due to QPS limit." << std::endl;
+        return;
+    }
+
     //网络上接收的远程rpc调用请求的字节流
     //包含方法名、参数
     std::string recv_buf=buffer->retrieveAllAsString();
@@ -133,12 +139,14 @@ void RpcProvider::OnMessage(const muduo::net::TcpConnectionPtr&conn,muduo::net::
     std::string service_name;
     std::string method_name;
     uint32_t args_size;
+    std::string trace_id;
     if(rpcHeader.ParseFromString(rpc_header_str))
     {
         //数据头反序列化成功
         service_name=rpcHeader.service_name();
         method_name=rpcHeader.method_name();
         args_size=rpcHeader.args_size();
+        trace_id=rpcHeader.trace_id();
     }
     else
     {
@@ -147,6 +155,9 @@ void RpcProvider::OnMessage(const muduo::net::TcpConnectionPtr&conn,muduo::net::
         return ;
     }
 
+    TraceContext trace;
+    trace.overrideTraceId(rpcHeader.trace_id()); // 新增函数：手动设置 trace_id
+    trace.recordEvent("recv_start");
     //获取rpc方法参数的字符流数据
     std::string args_str=recv_buf.substr(4+header_size,args_size);
 
@@ -195,16 +206,22 @@ void RpcProvider::OnMessage(const muduo::net::TcpConnectionPtr&conn,muduo::net::
     //给下面的method方法的调用，绑定一个Closure的回调函数
     google::protobuf::Closure *done=google::protobuf::NewCallback<RpcProvider,const muduo::net::TcpConnectionPtr&,google::protobuf::Message*>(this, &RpcProvider::SendRpcResponse,conn,response);
 
+
+    trace.recordEvent("handler_begin");
     //在框架上根据远端rpc请求，调用当前rpc节点上发布的方法
     //相当于UserService().Login(controller,request,response,done)
     service->CallMethod(method,nullptr,request,response,done);//done是Closuer抽象类的回调函数
-
+    trace.recordEvent("handler_end");
+    trace.recordEvent("send");
+    std::cout << trace.reportTrace() << std::endl;
 }
 
 
     //Closure的回调操作，用于序列化rpc的响应和网络发送。普通方法的调用需要绑定对象
     void RpcProvider::SendRpcResponse(const muduo::net::TcpConnectionPtr&conn,google::protobuf::Message* response)
     {
+
+        
         std::string response_str;
         //response_str进行序列化
         if(response->SerializeToString(&response_str))

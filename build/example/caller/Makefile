@@ -130,53 +130,53 @@ consumer/fast:
 	cd /home/ubuntu/zrx/projects/MyRPC/build && $(MAKE) $(MAKESILENT) -f example/caller/CMakeFiles/consumer.dir/build.make example/caller/CMakeFiles/consumer.dir/build
 .PHONY : consumer/fast
 
-__/friend.pb.o: __/friend.pb.cc.o
-.PHONY : __/friend.pb.o
+__/echo.pb.o: __/echo.pb.cc.o
+.PHONY : __/echo.pb.o
 
 # target to build an object file
-__/friend.pb.cc.o:
-	cd /home/ubuntu/zrx/projects/MyRPC/build && $(MAKE) $(MAKESILENT) -f example/caller/CMakeFiles/consumer.dir/build.make example/caller/CMakeFiles/consumer.dir/__/friend.pb.cc.o
-.PHONY : __/friend.pb.cc.o
+__/echo.pb.cc.o:
+	cd /home/ubuntu/zrx/projects/MyRPC/build && $(MAKE) $(MAKESILENT) -f example/caller/CMakeFiles/consumer.dir/build.make example/caller/CMakeFiles/consumer.dir/__/echo.pb.cc.o
+.PHONY : __/echo.pb.cc.o
 
-__/friend.pb.i: __/friend.pb.cc.i
-.PHONY : __/friend.pb.i
+__/echo.pb.i: __/echo.pb.cc.i
+.PHONY : __/echo.pb.i
 
 # target to preprocess a source file
-__/friend.pb.cc.i:
-	cd /home/ubuntu/zrx/projects/MyRPC/build && $(MAKE) $(MAKESILENT) -f example/caller/CMakeFiles/consumer.dir/build.make example/caller/CMakeFiles/consumer.dir/__/friend.pb.cc.i
-.PHONY : __/friend.pb.cc.i
+__/echo.pb.cc.i:
+	cd /home/ubuntu/zrx/projects/MyRPC/build && $(MAKE) $(MAKESILENT) -f example/caller/CMakeFiles/consumer.dir/build.make example/caller/CMakeFiles/consumer.dir/__/echo.pb.cc.i
+.PHONY : __/echo.pb.cc.i
 
-__/friend.pb.s: __/friend.pb.cc.s
-.PHONY : __/friend.pb.s
+__/echo.pb.s: __/echo.pb.cc.s
+.PHONY : __/echo.pb.s
 
 # target to generate assembly for a file
-__/friend.pb.cc.s:
-	cd /home/ubuntu/zrx/projects/MyRPC/build && $(MAKE) $(MAKESILENT) -f example/caller/CMakeFiles/consumer.dir/build.make example/caller/CMakeFiles/consumer.dir/__/friend.pb.cc.s
-.PHONY : __/friend.pb.cc.s
+__/echo.pb.cc.s:
+	cd /home/ubuntu/zrx/projects/MyRPC/build && $(MAKE) $(MAKESILENT) -f example/caller/CMakeFiles/consumer.dir/build.make example/caller/CMakeFiles/consumer.dir/__/echo.pb.cc.s
+.PHONY : __/echo.pb.cc.s
 
-callfriendservice.o: callfriendservice.cc.o
-.PHONY : callfriendservice.o
+circuitbreaker_caller.o: circuitbreaker_caller.cc.o
+.PHONY : circuitbreaker_caller.o
 
 # target to build an object file
-callfriendservice.cc.o:
-	cd /home/ubuntu/zrx/projects/MyRPC/build && $(MAKE) $(MAKESILENT) -f example/caller/CMakeFiles/consumer.dir/build.make example/caller/CMakeFiles/consumer.dir/callfriendservice.cc.o
-.PHONY : callfriendservice.cc.o
+circuitbreaker_caller.cc.o:
+	cd /home/ubuntu/zrx/projects/MyRPC/build && $(MAKE) $(MAKESILENT) -f example/caller/CMakeFiles/consumer.dir/build.make example/caller/CMakeFiles/consumer.dir/circuitbreaker_caller.cc.o
+.PHONY : circuitbreaker_caller.cc.o
 
-callfriendservice.i: callfriendservice.cc.i
-.PHONY : callfriendservice.i
+circuitbreaker_caller.i: circuitbreaker_caller.cc.i
+.PHONY : circuitbreaker_caller.i
 
 # target to preprocess a source file
-callfriendservice.cc.i:
-	cd /home/ubuntu/zrx/projects/MyRPC/build && $(MAKE) $(MAKESILENT) -f example/caller/CMakeFiles/consumer.dir/build.make example/caller/CMakeFiles/consumer.dir/callfriendservice.cc.i
-.PHONY : callfriendservice.cc.i
+circuitbreaker_caller.cc.i:
+	cd /home/ubuntu/zrx/projects/MyRPC/build && $(MAKE) $(MAKESILENT) -f example/caller/CMakeFiles/consumer.dir/build.make example/caller/CMakeFiles/consumer.dir/circuitbreaker_caller.cc.i
+.PHONY : circuitbreaker_caller.cc.i
 
-callfriendservice.s: callfriendservice.cc.s
-.PHONY : callfriendservice.s
+circuitbreaker_caller.s: circuitbreaker_caller.cc.s
+.PHONY : circuitbreaker_caller.s
 
 # target to generate assembly for a file
-callfriendservice.cc.s:
-	cd /home/ubuntu/zrx/projects/MyRPC/build && $(MAKE) $(MAKESILENT) -f example/caller/CMakeFiles/consumer.dir/build.make example/caller/CMakeFiles/consumer.dir/callfriendservice.cc.s
-.PHONY : callfriendservice.cc.s
+circuitbreaker_caller.cc.s:
+	cd /home/ubuntu/zrx/projects/MyRPC/build && $(MAKE) $(MAKESILENT) -f example/caller/CMakeFiles/consumer.dir/build.make example/caller/CMakeFiles/consumer.dir/circuitbreaker_caller.cc.s
+.PHONY : circuitbreaker_caller.cc.s
 
 # Help Target
 help:
@@ -187,12 +187,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... consumer"
-	@echo "... __/friend.pb.o"
-	@echo "... __/friend.pb.i"
-	@echo "... __/friend.pb.s"
-	@echo "... callfriendservice.o"
-	@echo "... callfriendservice.i"
-	@echo "... callfriendservice.s"
+	@echo "... __/echo.pb.o"
+	@echo "... __/echo.pb.i"
+	@echo "... __/echo.pb.s"
+	@echo "... circuitbreaker_caller.o"
+	@echo "... circuitbreaker_caller.i"
+	@echo "... circuitbreaker_caller.s"
 .PHONY : help
 
 

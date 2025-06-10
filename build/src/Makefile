@@ -274,6 +274,30 @@ myrpccontroller.cc.s:
 	cd /home/ubuntu/zrx/projects/MyRPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/myrpccontroller.cc.s
 .PHONY : myrpccontroller.cc.s
 
+rate_limiter.o: rate_limiter.cc.o
+.PHONY : rate_limiter.o
+
+# target to build an object file
+rate_limiter.cc.o:
+	cd /home/ubuntu/zrx/projects/MyRPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/rate_limiter.cc.o
+.PHONY : rate_limiter.cc.o
+
+rate_limiter.i: rate_limiter.cc.i
+.PHONY : rate_limiter.i
+
+# target to preprocess a source file
+rate_limiter.cc.i:
+	cd /home/ubuntu/zrx/projects/MyRPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/rate_limiter.cc.i
+.PHONY : rate_limiter.cc.i
+
+rate_limiter.s: rate_limiter.cc.s
+.PHONY : rate_limiter.s
+
+# target to generate assembly for a file
+rate_limiter.cc.s:
+	cd /home/ubuntu/zrx/projects/MyRPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/rate_limiter.cc.s
+.PHONY : rate_limiter.cc.s
+
 rpcheader.pb.o: rpcheader.pb.cc.o
 .PHONY : rpcheader.pb.o
 
@@ -321,6 +345,30 @@ rpcprovider.s: rpcprovider.cc.s
 rpcprovider.cc.s:
 	cd /home/ubuntu/zrx/projects/MyRPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/rpcprovider.cc.s
 .PHONY : rpcprovider.cc.s
+
+trace_context.o: trace_context.cc.o
+.PHONY : trace_context.o
+
+# target to build an object file
+trace_context.cc.o:
+	cd /home/ubuntu/zrx/projects/MyRPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/trace_context.cc.o
+.PHONY : trace_context.cc.o
+
+trace_context.i: trace_context.cc.i
+.PHONY : trace_context.i
+
+# target to preprocess a source file
+trace_context.cc.i:
+	cd /home/ubuntu/zrx/projects/MyRPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/trace_context.cc.i
+.PHONY : trace_context.cc.i
+
+trace_context.s: trace_context.cc.s
+.PHONY : trace_context.s
+
+# target to generate assembly for a file
+trace_context.cc.s:
+	cd /home/ubuntu/zrx/projects/MyRPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/trace_context.cc.s
+.PHONY : trace_context.cc.s
 
 zookeeperutil.o: zookeeperutil.cc.o
 .PHONY : zookeeperutil.o
@@ -373,12 +421,18 @@ help:
 	@echo "... myrpccontroller.o"
 	@echo "... myrpccontroller.i"
 	@echo "... myrpccontroller.s"
+	@echo "... rate_limiter.o"
+	@echo "... rate_limiter.i"
+	@echo "... rate_limiter.s"
 	@echo "... rpcheader.pb.o"
 	@echo "... rpcheader.pb.i"
 	@echo "... rpcheader.pb.s"
 	@echo "... rpcprovider.o"
 	@echo "... rpcprovider.i"
 	@echo "... rpcprovider.s"
+	@echo "... trace_context.o"
+	@echo "... trace_context.i"
+	@echo "... trace_context.s"
 	@echo "... zookeeperutil.o"
 	@echo "... zookeeperutil.i"
 	@echo "... zookeeperutil.s"

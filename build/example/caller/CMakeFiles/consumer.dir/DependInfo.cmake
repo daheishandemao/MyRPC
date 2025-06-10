@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/ubuntu/zrx/projects/MyRPC/example/friend.pb.cc" "example/caller/CMakeFiles/consumer.dir/__/friend.pb.cc.o" "gcc" "example/caller/CMakeFiles/consumer.dir/__/friend.pb.cc.o.d"
-  "/home/ubuntu/zrx/projects/MyRPC/example/caller/callfriendservice.cc" "example/caller/CMakeFiles/consumer.dir/callfriendservice.cc.o" "gcc" "example/caller/CMakeFiles/consumer.dir/callfriendservice.cc.o.d"
+  "/home/ubuntu/zrx/projects/MyRPC/example/echo.pb.cc" "example/caller/CMakeFiles/consumer.dir/__/echo.pb.cc.o" "gcc" "example/caller/CMakeFiles/consumer.dir/__/echo.pb.cc.o.d"
+  "/home/ubuntu/zrx/projects/MyRPC/example/caller/circuitbreaker_caller.cc" "example/caller/CMakeFiles/consumer.dir/circuitbreaker_caller.cc.o" "gcc" "example/caller/CMakeFiles/consumer.dir/circuitbreaker_caller.cc.o.d"
   )
 
 # Targets to which this target links.

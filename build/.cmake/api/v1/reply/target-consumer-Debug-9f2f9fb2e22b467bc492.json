@@ -28,7 +28,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 3,
+				"line" : 4,
 				"parent" : 0
 			},
 			{
@@ -43,7 +43,7 @@
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 4,
+				"line" : 5,
 				"parent" : 0
 			},
 			{
@@ -169,13 +169,13 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "example/caller/callfriendservice.cc",
+			"path" : "example/caller/circuitbreaker_caller.cc",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "example/friend.pb.cc",
+			"path" : "example/echo.pb.cc",
 			"sourceGroupIndex" : 0
 		}
 	],

@@ -69,44 +69,44 @@ include example/callee/CMakeFiles/provider.dir/progress.make
 # Include the compile flags for this target's objects.
 include example/callee/CMakeFiles/provider.dir/flags.make
 
-example/callee/CMakeFiles/provider.dir/friendservice.cc.o: example/callee/CMakeFiles/provider.dir/flags.make
-example/callee/CMakeFiles/provider.dir/friendservice.cc.o: ../example/callee/friendservice.cc
-example/callee/CMakeFiles/provider.dir/friendservice.cc.o: example/callee/CMakeFiles/provider.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/zrx/projects/MyRPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object example/callee/CMakeFiles/provider.dir/friendservice.cc.o"
-	cd /home/ubuntu/zrx/projects/MyRPC/build/example/callee && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT example/callee/CMakeFiles/provider.dir/friendservice.cc.o -MF CMakeFiles/provider.dir/friendservice.cc.o.d -o CMakeFiles/provider.dir/friendservice.cc.o -c /home/ubuntu/zrx/projects/MyRPC/example/callee/friendservice.cc
+example/callee/CMakeFiles/provider.dir/circuitbreaker_callee.cc.o: example/callee/CMakeFiles/provider.dir/flags.make
+example/callee/CMakeFiles/provider.dir/circuitbreaker_callee.cc.o: ../example/callee/circuitbreaker_callee.cc
+example/callee/CMakeFiles/provider.dir/circuitbreaker_callee.cc.o: example/callee/CMakeFiles/provider.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/zrx/projects/MyRPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object example/callee/CMakeFiles/provider.dir/circuitbreaker_callee.cc.o"
+	cd /home/ubuntu/zrx/projects/MyRPC/build/example/callee && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT example/callee/CMakeFiles/provider.dir/circuitbreaker_callee.cc.o -MF CMakeFiles/provider.dir/circuitbreaker_callee.cc.o.d -o CMakeFiles/provider.dir/circuitbreaker_callee.cc.o -c /home/ubuntu/zrx/projects/MyRPC/example/callee/circuitbreaker_callee.cc
 
-example/callee/CMakeFiles/provider.dir/friendservice.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/provider.dir/friendservice.cc.i"
-	cd /home/ubuntu/zrx/projects/MyRPC/build/example/callee && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/zrx/projects/MyRPC/example/callee/friendservice.cc > CMakeFiles/provider.dir/friendservice.cc.i
+example/callee/CMakeFiles/provider.dir/circuitbreaker_callee.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/provider.dir/circuitbreaker_callee.cc.i"
+	cd /home/ubuntu/zrx/projects/MyRPC/build/example/callee && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/zrx/projects/MyRPC/example/callee/circuitbreaker_callee.cc > CMakeFiles/provider.dir/circuitbreaker_callee.cc.i
 
-example/callee/CMakeFiles/provider.dir/friendservice.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/provider.dir/friendservice.cc.s"
-	cd /home/ubuntu/zrx/projects/MyRPC/build/example/callee && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/zrx/projects/MyRPC/example/callee/friendservice.cc -o CMakeFiles/provider.dir/friendservice.cc.s
+example/callee/CMakeFiles/provider.dir/circuitbreaker_callee.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/provider.dir/circuitbreaker_callee.cc.s"
+	cd /home/ubuntu/zrx/projects/MyRPC/build/example/callee && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/zrx/projects/MyRPC/example/callee/circuitbreaker_callee.cc -o CMakeFiles/provider.dir/circuitbreaker_callee.cc.s
 
-example/callee/CMakeFiles/provider.dir/__/friend.pb.cc.o: example/callee/CMakeFiles/provider.dir/flags.make
-example/callee/CMakeFiles/provider.dir/__/friend.pb.cc.o: ../example/friend.pb.cc
-example/callee/CMakeFiles/provider.dir/__/friend.pb.cc.o: example/callee/CMakeFiles/provider.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/zrx/projects/MyRPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object example/callee/CMakeFiles/provider.dir/__/friend.pb.cc.o"
-	cd /home/ubuntu/zrx/projects/MyRPC/build/example/callee && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT example/callee/CMakeFiles/provider.dir/__/friend.pb.cc.o -MF CMakeFiles/provider.dir/__/friend.pb.cc.o.d -o CMakeFiles/provider.dir/__/friend.pb.cc.o -c /home/ubuntu/zrx/projects/MyRPC/example/friend.pb.cc
+example/callee/CMakeFiles/provider.dir/__/echo.pb.cc.o: example/callee/CMakeFiles/provider.dir/flags.make
+example/callee/CMakeFiles/provider.dir/__/echo.pb.cc.o: ../example/echo.pb.cc
+example/callee/CMakeFiles/provider.dir/__/echo.pb.cc.o: example/callee/CMakeFiles/provider.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/zrx/projects/MyRPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object example/callee/CMakeFiles/provider.dir/__/echo.pb.cc.o"
+	cd /home/ubuntu/zrx/projects/MyRPC/build/example/callee && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT example/callee/CMakeFiles/provider.dir/__/echo.pb.cc.o -MF CMakeFiles/provider.dir/__/echo.pb.cc.o.d -o CMakeFiles/provider.dir/__/echo.pb.cc.o -c /home/ubuntu/zrx/projects/MyRPC/example/echo.pb.cc
 
-example/callee/CMakeFiles/provider.dir/__/friend.pb.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/provider.dir/__/friend.pb.cc.i"
-	cd /home/ubuntu/zrx/projects/MyRPC/build/example/callee && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/zrx/projects/MyRPC/example/friend.pb.cc > CMakeFiles/provider.dir/__/friend.pb.cc.i
+example/callee/CMakeFiles/provider.dir/__/echo.pb.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/provider.dir/__/echo.pb.cc.i"
+	cd /home/ubuntu/zrx/projects/MyRPC/build/example/callee && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/zrx/projects/MyRPC/example/echo.pb.cc > CMakeFiles/provider.dir/__/echo.pb.cc.i
 
-example/callee/CMakeFiles/provider.dir/__/friend.pb.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/provider.dir/__/friend.pb.cc.s"
-	cd /home/ubuntu/zrx/projects/MyRPC/build/example/callee && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/zrx/projects/MyRPC/example/friend.pb.cc -o CMakeFiles/provider.dir/__/friend.pb.cc.s
+example/callee/CMakeFiles/provider.dir/__/echo.pb.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/provider.dir/__/echo.pb.cc.s"
+	cd /home/ubuntu/zrx/projects/MyRPC/build/example/callee && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/zrx/projects/MyRPC/example/echo.pb.cc -o CMakeFiles/provider.dir/__/echo.pb.cc.s
 
 # Object files for target provider
 provider_OBJECTS = \
-"CMakeFiles/provider.dir/friendservice.cc.o" \
-"CMakeFiles/provider.dir/__/friend.pb.cc.o"
+"CMakeFiles/provider.dir/circuitbreaker_callee.cc.o" \
+"CMakeFiles/provider.dir/__/echo.pb.cc.o"
 
 # External object files for target provider
 provider_EXTERNAL_OBJECTS =
 
-../bin/provider: example/callee/CMakeFiles/provider.dir/friendservice.cc.o
-../bin/provider: example/callee/CMakeFiles/provider.dir/__/friend.pb.cc.o
+../bin/provider: example/callee/CMakeFiles/provider.dir/circuitbreaker_callee.cc.o
+../bin/provider: example/callee/CMakeFiles/provider.dir/__/echo.pb.cc.o
 ../bin/provider: example/callee/CMakeFiles/provider.dir/build.make
 ../bin/provider: ../lib/libmyrpc.a
 ../bin/provider: example/callee/CMakeFiles/provider.dir/link.txt

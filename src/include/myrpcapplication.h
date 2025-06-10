@@ -2,6 +2,7 @@
 #include "myrpcchannel.h"
 #include "myrpccontroller.h"
 #include "myrpcconfig.h"
+#include "zookeeperutil.h"
 //myrpc框架的基础类，负责框架的一些初始化操作
 class MyrpcApplication//使用单例模式来设计它
 {

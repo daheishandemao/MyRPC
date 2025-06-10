@@ -53,12 +53,12 @@ void ZkClient::Start()
    zoo_set_context(m_zhandle,&sem);
 
    //阻塞在这里
-   sem_wait(&sem,0,0);
+   sem_wait(&sem);
    std::cout<<"zookeeper_init success!"<<std::endl;
 }
 
 //state是状态：永久/临时
-void ZkCkient::Create(const char *path,const char*data,int datalen,int state)
+void ZkClient::Create(const char *path,const char *data,int datalen,int state)
 {
     char path_buffer[128];
     int bufferlen=sizeof(path_buffer);
@@ -83,7 +83,7 @@ void ZkCkient::Create(const char *path,const char*data,int datalen,int state)
 }
 
 //根据指定path获取znode节点的值
-std::string ZkCkient::GetData(const char *path)
+std::string ZkClient::GetData(const char *path)
 {
     char buffer[64];
     int bufferlen=sizeof(buffer);
@@ -96,4 +96,32 @@ std::string ZkCkient::GetData(const char *path)
     else{
         return buffer;
     }
+}
+
+// 获取指定 path 路径下的所有子节点名称（用于负载均衡）
+std::vector<std::string> ZkClient::GetChildren(const char *path) {
+    std::vector<std::string> children;  // 保存子节点名字
+
+    struct String_vector strings;  // Zookeeper 内部结构，保存子节点结果
+    int flag = zoo_get_children(m_zhandle, path, 0, &strings);
+    // 参数解释：
+    // m_zhandle：ZK连接句柄
+    // path：你要查找的znode路径
+    // 0：不开启watcher
+    // &strings：返回的子节点列表结构体
+
+    if (flag != ZOK) {
+        std::cout << "get children error... path: " << path << std::endl;
+        return children;
+    }
+
+    // 将结果添加到 C++ vector 中
+    for (int i = 0; i < strings.count; ++i) {
+        children.emplace_back(strings.data[i]);
+    }
+
+    // 释放 zoo_get_children 分配的内存
+    deallocate_String_vector(&strings);
+
+    return children;
 }
