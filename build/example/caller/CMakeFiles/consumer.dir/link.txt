@@ -1,0 +1,1 @@
+/usr/bin/g++ -g -rdynamic CMakeFiles/consumer.dir/circuitbreaker_caller.cc.o CMakeFiles/consumer.dir/__/echo.pb.cc.o -o ../../../bin/consumer   -L/home/ubuntu/zrx/projects/MyRPC/lib  -Wl,-rpath,/home/ubuntu/zrx/projects/MyRPC/lib ../../../lib/libmyrpc.a -lprotobuf -lmuduo_net -lmuduo_base -lpthread -lzookeeper_mt 
