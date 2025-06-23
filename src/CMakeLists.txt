@@ -21,6 +21,7 @@ file(GLOB_RECURSE MYRPC_SRC
     trace/*.cc
     monitor/*.cc
     threadpool/*.cc
+    health/*.cc
 )
 # add_library(myrpc ${SRC_LIST})#删去SHARED就是静态库，可以生成SHARED的动态库
 add_library(myrpc STATIC ${MYRPC_SRC})

@@ -1,7 +1,28 @@
 #include "rpcprovider.h"
 #include "myrpcapplication.h"
 #include "../codec/rpcheader.pb.h"
+#include "../health/health_checker.h"
 
+static HealthChecker health_checker;
+
+void start_health_checker() {
+    health_checker.setProbeFunc([](const ServiceEndpoint& ep) -> bool {
+        int sock = socket(AF_INET, SOCK_STREAM, 0);
+        if (sock < 0) return false;
+        sockaddr_in addr;
+        addr.sin_family = AF_INET;
+        addr.sin_port = htons(ep.port);
+        inet_pton(AF_INET, ep.ip.c_str(), &addr.sin_addr);
+
+        int ret = connect(sock, (sockaddr*)&addr, sizeof(addr));
+        close(sock);
+        return (ret == 0);
+    });
+
+    health_checker.addEndpoint("UserService", {"127.0.0.1", 8000});
+    health_checker.addEndpoint("FriendService", {"127.0.0.1", 8000});
+    health_checker.start();
+}
 
 /*
 service_name=>service描述

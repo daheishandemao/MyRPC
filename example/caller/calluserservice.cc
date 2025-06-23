@@ -9,6 +9,7 @@ int main(int argc,char **argv)
     //读取配置文件进行初始化
     MyrpcApplication::Init(argc,argv);
 
+    start_health_checker();  //启动健康检查
     //演示调用远程发布的rpc方法Login
     fixbug::UserServiceRpc_Stub stub(new MyrpcChannel());//需要传入一个RpcChannel对象
     //rpc方法的请求参数

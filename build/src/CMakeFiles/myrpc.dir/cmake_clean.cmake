@@ -17,6 +17,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/myrpc.dir/core/myrpccontroller.cc.o.d"
   "CMakeFiles/myrpc.dir/core/rpcprovider.cc.o"
   "CMakeFiles/myrpc.dir/core/rpcprovider.cc.o.d"
+  "CMakeFiles/myrpc.dir/health/health_checker.cc.o"
+  "CMakeFiles/myrpc.dir/health/health_checker.cc.o.d"
   "CMakeFiles/myrpc.dir/limiter/rate_limiter.cc.o"
   "CMakeFiles/myrpc.dir/limiter/rate_limiter.cc.o.d"
   "CMakeFiles/myrpc.dir/log/lockqueue.cc.o"

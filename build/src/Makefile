@@ -322,6 +322,30 @@ core/rpcprovider.cc.s:
 	cd /home/ubuntu/zrx/projects/MyRPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/core/rpcprovider.cc.s
 .PHONY : core/rpcprovider.cc.s
 
+health/health_checker.o: health/health_checker.cc.o
+.PHONY : health/health_checker.o
+
+# target to build an object file
+health/health_checker.cc.o:
+	cd /home/ubuntu/zrx/projects/MyRPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/health/health_checker.cc.o
+.PHONY : health/health_checker.cc.o
+
+health/health_checker.i: health/health_checker.cc.i
+.PHONY : health/health_checker.i
+
+# target to preprocess a source file
+health/health_checker.cc.i:
+	cd /home/ubuntu/zrx/projects/MyRPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/health/health_checker.cc.i
+.PHONY : health/health_checker.cc.i
+
+health/health_checker.s: health/health_checker.cc.s
+.PHONY : health/health_checker.s
+
+# target to generate assembly for a file
+health/health_checker.cc.s:
+	cd /home/ubuntu/zrx/projects/MyRPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/health/health_checker.cc.s
+.PHONY : health/health_checker.cc.s
+
 limiter/rate_limiter.o: limiter/rate_limiter.cc.o
 .PHONY : limiter/rate_limiter.o
 
@@ -523,6 +547,9 @@ help:
 	@echo "... core/rpcprovider.o"
 	@echo "... core/rpcprovider.i"
 	@echo "... core/rpcprovider.s"
+	@echo "... health/health_checker.o"
+	@echo "... health/health_checker.i"
+	@echo "... health/health_checker.s"
 	@echo "... limiter/rate_limiter.o"
 	@echo "... limiter/rate_limiter.i"
 	@echo "... limiter/rate_limiter.s"
