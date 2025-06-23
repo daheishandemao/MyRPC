@@ -1,5 +1,5 @@
-#include "myrpcapplication.h"
-#include "rpcprovider.h"
+#include "../core/myrpcapplication.h"
+#include "../core/rpcprovider.h"
 #include "echo.pb.h"
 
 class EchoService : public example::EchoServiceRpc {

@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/g++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/ubuntu/zrx/projects/MyRPC/src/include -I/home/ubuntu/zrx/projects/MyRPC/example
+CXX_INCLUDES = -I/home/ubuntu/zrx/projects/MyRPC/src/include -I/home/ubuntu/zrx/projects/MyRPC/example -I/home/ubuntu/zrx/projects/MyRPC/src
 
 CXX_FLAGS = -g
 
