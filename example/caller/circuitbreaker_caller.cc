@@ -35,7 +35,7 @@ int main(int argc, char **argv) {
 
         // 调用远程方法
         stub.Echo(&controller, &request, &response, nullptr);
-
+ 
         if (controller.Failed()) {
             std::cout << "[FAIL] (" << i << ") " << controller.ErrorText() << " | response: " << response.msg()<< std::endl;
         } else {

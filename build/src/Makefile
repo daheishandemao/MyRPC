@@ -322,6 +322,54 @@ core/rpcprovider.cc.s:
 	cd /home/ubuntu/zrx/projects/MyRPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/core/rpcprovider.cc.s
 .PHONY : core/rpcprovider.cc.s
 
+db/mysql_client.o: db/mysql_client.cc.o
+.PHONY : db/mysql_client.o
+
+# target to build an object file
+db/mysql_client.cc.o:
+	cd /home/ubuntu/zrx/projects/MyRPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/db/mysql_client.cc.o
+.PHONY : db/mysql_client.cc.o
+
+db/mysql_client.i: db/mysql_client.cc.i
+.PHONY : db/mysql_client.i
+
+# target to preprocess a source file
+db/mysql_client.cc.i:
+	cd /home/ubuntu/zrx/projects/MyRPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/db/mysql_client.cc.i
+.PHONY : db/mysql_client.cc.i
+
+db/mysql_client.s: db/mysql_client.cc.s
+.PHONY : db/mysql_client.s
+
+# target to generate assembly for a file
+db/mysql_client.cc.s:
+	cd /home/ubuntu/zrx/projects/MyRPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/db/mysql_client.cc.s
+.PHONY : db/mysql_client.cc.s
+
+db/redis_client.o: db/redis_client.cc.o
+.PHONY : db/redis_client.o
+
+# target to build an object file
+db/redis_client.cc.o:
+	cd /home/ubuntu/zrx/projects/MyRPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/db/redis_client.cc.o
+.PHONY : db/redis_client.cc.o
+
+db/redis_client.i: db/redis_client.cc.i
+.PHONY : db/redis_client.i
+
+# target to preprocess a source file
+db/redis_client.cc.i:
+	cd /home/ubuntu/zrx/projects/MyRPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/db/redis_client.cc.i
+.PHONY : db/redis_client.cc.i
+
+db/redis_client.s: db/redis_client.cc.s
+.PHONY : db/redis_client.s
+
+# target to generate assembly for a file
+db/redis_client.cc.s:
+	cd /home/ubuntu/zrx/projects/MyRPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/db/redis_client.cc.s
+.PHONY : db/redis_client.cc.s
+
 health/health_checker.o: health/health_checker.cc.o
 .PHONY : health/health_checker.o
 
@@ -547,6 +595,12 @@ help:
 	@echo "... core/rpcprovider.o"
 	@echo "... core/rpcprovider.i"
 	@echo "... core/rpcprovider.s"
+	@echo "... db/mysql_client.o"
+	@echo "... db/mysql_client.i"
+	@echo "... db/mysql_client.s"
+	@echo "... db/redis_client.o"
+	@echo "... db/redis_client.i"
+	@echo "... db/redis_client.s"
 	@echo "... health/health_checker.o"
 	@echo "... health/health_checker.i"
 	@echo "... health/health_checker.s"

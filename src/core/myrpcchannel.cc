@@ -11,6 +11,44 @@
 
 FallbackFunc fallback_ = nullptr;   // 声明一个可选的降级处理函数
 RoundRobinLB round_robin_lb;       // 创建轮询负载均衡器
+static ThreadPool g_rpc_channel_pool(16);   // 16 线程池
+
+// 初始化 zk 客户端
+
+// 初始化 LB 策略：默认用轮询（可以改成 LC、随机）
+
+// 初始化健康检查器
+
+// 设置探针函数：用简单 TCP ping 检测 endpoint 健康
+
+// 启动健康检查线程（内部 run 线程）
+
+// MyrpcChannel::MyrpcChannel()
+//     : zk_client_(std::make_shared<ZkClient>()),
+//       load_balancer_(std::make_shared<AdvancedLoadBalancer>(AdvancedLoadBalancer::Type::ROUND_ROBIN)),
+//       health_checker_(std::make_shared<HealthChecker>())
+// {
+//     zk_client_->Start();
+//     health_checker_->setProbeFunc([](const ServiceEndpoint& ep) -> bool {
+//         // 简单 TCP ping
+//         int sockfd = socket(AF_INET, SOCK_STREAM, 0);
+//         if (sockfd < 0) return false;
+//         struct sockaddr_in addr;
+//         addr.sin_family = AF_INET;
+//         addr.sin_port = htons(ep.port);
+//         inet_pton(AF_INET, ep.ip.c_str(), &addr.sin_addr);
+
+//         struct timeval tv;
+//         tv.tv_sec = 1; tv.tv_usec = 0;
+//         setsockopt(sockfd, SOL_SOCKET, SO_RCVTIMEO, &tv, sizeof(tv));
+//         setsockopt(sockfd, SOL_SOCKET, SO_SNDTIMEO, &tv, sizeof(tv));
+
+//         int ret = connect(sockfd, (struct sockaddr*)&addr, sizeof(addr));
+//         close(sockfd);
+//         return ret == 0;
+//     });
+//     health_checker_->start();
+// }
 
 /*
 约定好的数据格式：
@@ -49,7 +87,8 @@ void MyrpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     myrpc::RpcHeader rpcHeader;
     rpcHeader.set_service_name(service_name);
     rpcHeader.set_method_name(method_name);
-    rpcHeader.set_trace_id(trace.getTraceId());  // 新增行
+    std::string trace_id=trace.getTraceId();
+    rpcHeader.set_trace_id(trace_id);  // 新增行
     rpcHeader.set_args_size(args_size);
 
     uint32_t header_size=0;
@@ -73,6 +112,8 @@ void MyrpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     send_rpc_str+=rpc_header_str;
     //放args_str
     send_rpc_str+=args_str;
+    //放trace_id
+
 
     //打印调试信息
     std::cout<<"==============myrpcchannel===================="<<std::endl;
@@ -117,6 +158,7 @@ void MyrpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     }
     std::string ip=host_data.substr(0,idx);
     uint16_t port=atoi(host_data.substr(idx+1,host_data.size()-idx).c_str());
+
     //负载均衡
     // std::vector<std::string> providers = zkCli.GetChildren(method_path.c_str());  // 返回一批 provider 节点
     // std::string peer = round_robin_lb.pick(providers);
@@ -127,6 +169,42 @@ void MyrpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     // int idx = peer.find(":");
     // std::string ip = peer.substr(0, idx);
     // uint16_t port = std::stoi(peer.substr(idx+1));
+
+    // 健康检查+负载均衡
+    // std::vector<std::string> children = zk_client_->GetChildren(method_path.c_str());
+    // if (children.empty()) {
+    //     LOG_ERROR("no nodes for path %s", method_path.c_str());
+    //      //降级函数
+    //     if (fallback_) {
+    //         fallback_();
+    //     }
+    //     return;
+    // }
+
+    // // 更新 endpoint 到 health_checker
+    // for (const auto& child : children) {
+    //     size_t pos = child.find(':');
+    //     std::string ip = child.substr(0, pos);
+    //     uint16_t port = atoi(child.substr(pos + 1).c_str());
+    //     ServiceEndpoint ep{ip, port};
+    //     health_checker_->addEndpoint(service_name, ep);
+    //     load_balancer_->addEndpoint(service_name, ep);
+    // }
+
+    // // 从 healthy endpoint 中选
+    // auto healthy_eps = health_checker_->getHealthyEndpoints(service_name);
+    // if (healthy_eps.empty()) {
+    //     LOG_ERROR("no healthy nodes for service %s", service_name.c_str());
+    //     if (fallback_) {
+    //         fallback_();
+    //     }
+    //     return;
+    // }
+
+    // 根据strategy_的不同进行负载均衡，选出最合适的ServiceEndpoint
+    // ServiceEndpoint selected = load_balancer_->selectEndpoint(service_name, healthy_eps);
+
+    // LOG_INFO("MyrpcChannel selected endpoint %s:%d", selected.ip.c_str(), selected.port);
 
 
 
@@ -163,7 +241,13 @@ void MyrpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     }
 
     trace.recordEvent("send_done");
-    //通过send先发起rpc请求
+    //进入线程池
+    g_rpc_channel_pool.submit([=]() {
+        TraceContext trace1;
+        trace1.overrideTraceId(trace1.getTraceId());
+        trace1.recordEvent("channel_send_start");
+
+        //通过send先发起rpc请求
     if(-1==send(clientfd,send_rpc_str.c_str(),send_rpc_str.size(),0))
     {
         std::cout<<"send error! errno:"<<errno<<std::endl;
@@ -174,6 +258,12 @@ void MyrpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
         close(clientfd);//失败关闭文件描述符
         return;
     }
+
+        trace1.recordEvent("channel_send_end");
+        std::cout << trace1.reportTrace() << std::endl;
+    });
+    trace.recordEvent("send_done");
+    
 
     //接收rpc请求的响应值
     char recv_buf[1024]={0};//定义了一k的缓冲区

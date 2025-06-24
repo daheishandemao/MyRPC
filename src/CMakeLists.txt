@@ -22,9 +22,13 @@ file(GLOB_RECURSE MYRPC_SRC
     monitor/*.cc
     threadpool/*.cc
     health/*.cc
+    db/*.cc
 )
 # add_library(myrpc ${SRC_LIST})#删去SHARED就是静态库，可以生成SHARED的动态库
 add_library(myrpc STATIC ${MYRPC_SRC})
+
+# find_package(Hiredis REQUIRED)
+# find_package(MySQL REQUIRED)
 # 头文件路径
 target_include_directories(myrpc PUBLIC
     ${PROJECT_SOURCE_DIR}/src

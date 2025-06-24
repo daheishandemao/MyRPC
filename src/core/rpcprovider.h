@@ -14,6 +14,7 @@
 #include "../zk/zookeeperutil.h"
 #include "../trace/trace_context.h"
 #include "../limiter/rate_limiter.h"
+#include "../threadpool/thread_pool.h"
 
 
 //框架提供的专门负责发布rpc服务的网络对象类

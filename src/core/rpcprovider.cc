@@ -4,6 +4,7 @@
 #include "../health/health_checker.h"
 
 static HealthChecker health_checker;
+static ThreadPool g_rpc_provider_pool(16);   // 16 线程池
 
 void start_health_checker() {
     health_checker.setProbeFunc([](const ServiceEndpoint& ep) -> bool {
@@ -229,9 +230,20 @@ void RpcProvider::OnMessage(const muduo::net::TcpConnectionPtr&conn,muduo::net::
 
 
     trace.recordEvent("handler_begin");
-    //在框架上根据远端rpc请求，调用当前rpc节点上发布的方法
+    //进入线程池
+    g_rpc_provider_pool.submit([=]() {
+        TraceContext trace;
+        trace.overrideTraceId(rpcHeader.trace_id());
+        trace.recordEvent("provider_recv_start");
+
+        //在框架上根据远端rpc请求，调用当前rpc节点上发布的方法
     //相当于UserService().Login(controller,request,response,done)
     service->CallMethod(method,nullptr,request,response,done);//done是Closuer抽象类的回调函数
+
+        trace.recordEvent("provider_send_end");
+        std::cout << trace.reportTrace() << std::endl;
+    });
+    
     trace.recordEvent("handler_end");
     trace.recordEvent("send");
     std::cout << trace.reportTrace() << std::endl;
