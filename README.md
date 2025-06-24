@@ -1,13 +1,49 @@
-# MyRPC
-## 项目简介
-MyRPC 是一个基于 C++ 开发的高性能分布式 RPC 框架，旨在为微服务架构下的远程调用提供高效、可靠的解决方案。通过采用二进制协议 Protobuf 优化传输效率，使用多线程 Epoll 模型支撑高并发，同时支持动态服务注册发现与异步日志监控，使得 MyRPC 能够在复杂的分布式环境中保持优异的性能和稳定性。
-## 功能特点
-> 高效传输：利用 Protobuf 实现接口定义与数据编解码，通过二进制协议提高数据传输效率。  
-> 高并发支持：基于多线程 Epoll 模型，能够高效处理大量并发连接。  
-> 服务注册与发现：服务注册中心通过 Zookeeper 维护节点信息，实现动态服务注册与发现> 。  
-> 异步日志监控：支持异步日志监控，便于实时跟踪和分析系统运行状态。
-## 技术栈
-  语言：C++  
-  接口定义与数据编解码：Protobuf  
-  服务注册中心：Zookeeper  
-  网络通信：Muduo（Reactor 模式）
+# MyRPC - 轻量高性能 RPC 框架
+
+MyRPC 是一个基于 C++ 开发的轻量级、高性能、模块化的 RPC 框架，支持负载均衡、熔断、限流、健康检查、链路追踪、高并发处理，适合作为学习和中小型分布式系统的基础组件。
+
+## 特性 Features
+
+✅ 支持 protobuf 序列化协议  
+✅ TCP 自定义协议防止粘包拆包问题  
+✅ 基于 ZooKeeper 实现服务注册与发现  
+✅ 轮询 / 随机 / 最小连接数负载均衡  
+✅ 令牌桶限流 + 熔断 + 降级策略  
+✅ 健康检查（pluggable probe）  
+✅ 链路追踪 trace_id 贯穿客户端 / 服务端 / DB  
+✅ ThreadPool 优化高并发  
+✅ 兼容 MySQL / Redis 等中间件  
+✅ OpenTelemetry 集成预留中
+
+## 目录结构（master分支）
+
+src/ -- 核心实现
+core/ -- RPC 框架核心
+codec/ -- 协议编码解码
+zk/ -- Zookeeper 工具类
+limiter/ -- 熔断 / 限流 / 降级
+balance/ -- 负载均衡算法
+threadpool/ -- 线程池
+trace/ -- 链路追踪
+monitor/ -- 监控
+example/ -- 示例代码 caller / callee
+test/ -- 单元测试
+lib/ -- 编译生成库文件
+bin/ -- 运行产物
+
+
+## 编译 & 运行
+
+```bash
+# 安装依赖
+sudo apt install -y protobuf-compiler libprotobuf-dev zookeeper libzookeeper-mt-dev mysql-client libmysqlclient-dev redis
+
+# 编译
+mkdir build && cd build
+cmake ..
+make -j
+
+# 运行示例
+cd bin
+./provider
+./consumer
