@@ -17,19 +17,19 @@ MyRPC 是一个基于 C++ 开发的轻量级、高性能、模块化的 RPC 框�
 
 ## 目录结构（master分支）
 
-src/ -- 核心实现 
-core/ -- RPC 框架核心 
-codec/ -- 协议编码解码 
-zk/ -- Zookeeper 工具类 
-limiter/ -- 熔断 / 限流 / 降级 
-balance/ -- 负载均衡算法 
-threadpool/ -- 线程池 
-trace/ -- 链路追踪 
-monitor/ -- 监控 
-example/ -- 示例代码 caller / callee 
-test/ -- 单元测试 
-lib/ -- 编译生成库文件 
-bin/ -- 运行产物 
+src/ -- 核心实现  
+core/ -- RPC 框架核心  
+codec/ -- 协议编码解码  
+zk/ -- Zookeeper 工具类  
+limiter/ -- 熔断 / 限流 / 降级  
+balance/ -- 负载均衡算法  
+threadpool/ -- 线程池  
+trace/ -- 链路追踪  
+monitor/ -- 监控  
+example/ -- 示例代码 caller / callee  
+test/ -- 单元测试  
+lib/ -- 编译生成库文件  
+bin/ -- 运行产物  
 
 
 ## 编译 & 运行
