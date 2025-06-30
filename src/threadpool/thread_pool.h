@@ -21,7 +21,7 @@ public:
 private:
     void workerLoop();// 每个线程的工作循环
 
-    std::vector<std::thread> workers_;// 工作线程
+    std::vector<std::thread>workers_;// 工作线程
     std::queue<std::function<void()>> tasks_;// 任务队列
     std::mutex mutex_;// 互斥锁
     std::condition_variable cond_;// 条件变量

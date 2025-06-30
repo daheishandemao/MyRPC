@@ -231,7 +231,7 @@ void RpcProvider::OnMessage(const muduo::net::TcpConnectionPtr&conn,muduo::net::
 
     trace.recordEvent("handler_begin");
     //进入线程池
-    g_rpc_provider_pool.submit([=]() {
+    g_rpc_provider_pool.submit([=]() {//=表示复制-赋值。不可以是&引用，因为是异步执行的
         TraceContext trace;
         trace.overrideTraceId(rpcHeader.trace_id());
         trace.recordEvent("provider_recv_start");
